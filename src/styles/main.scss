@@ -1,0 +1,16 @@
+@import "config/ease";
+@import "config/fonts";
+@import "config/pallette";
+@import "config/variables";
+
+@import "config/normalize";
+@import "config/mediaQuery";
+
+html {
+  overscroll-behavior: none;
+}
+
+body {
+  background-color: var(--primary);
+  overscroll-behavior: none;
+}
