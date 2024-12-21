@@ -30,6 +30,12 @@ const CompactCard: FC<CompactCardProps> = ({
         <CardContent {...mainContent} />
       </div>
 
+      {primaryMedia?.url && (
+        <div className={S.PrimaryMediaWrapper}>
+          <Image className={S.Media} fill src={primaryMedia?.url} alt="" />
+        </div>
+      )}
+
       {secondaryMedia?.url && (
         <div className={S.SecondaryMediaWrapper}>
           <Image
@@ -38,12 +44,6 @@ const CompactCard: FC<CompactCardProps> = ({
             src={secondaryMedia.url}
             alt=""
           />
-        </div>
-      )}
-
-      {primaryMedia?.url && (
-        <div className={S.PrimaryMediaWrapper}>
-          <Image className={S.Media} fill src={primaryMedia?.url} alt="" />
         </div>
       )}
     </div>
