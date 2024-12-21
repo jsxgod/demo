@@ -12,11 +12,54 @@ export const getLandingPageCmsData = async () => {
     query {
       landingPages {
         sections {
-          title
           dynamicGridCards {
+            cardColumns
+            cardAlignment
+            isAlignedToTitle
+            title
+            titleStartColumn
+            titleColumns
+            description {
+              text
+              markdown
+              html
+            }
+            descriptionStartColumn
+            descriptionColumns
+            ctaDirection
+            ctaComponents {
+              __typename
+              ... on Button {
+                label
+                url
+                color {
+                  hex
+                }
+              }
+              ... on DownloadButton {
+                label
+                url
+                color {
+                  hex
+                }
+              }
+            }
             dynamicMedia {
               type
+              verticalAlignment
               horizontalAlignment
+              largeMedia {
+                url
+                width
+                height
+                mimeType
+              }
+              smallMedia {
+                url
+                width
+                height
+                mimeType
+              }
             }
           }
         }
@@ -24,8 +67,11 @@ export const getLandingPageCmsData = async () => {
     }
   `;
 
-  const data: CmsModelLandingPage[] = await gqlClient.request(query);
-  const landingPageData = data?.[0] || {};
+  const data: { landingPages: CmsModelLandingPage[] } = await gqlClient.request(
+    query
+  );
+
+  const landingPageData = data?.landingPages?.[0] || {};
 
   return landingPageData;
 };
