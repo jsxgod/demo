@@ -20,16 +20,14 @@ const CompactCard: FC<CompactCardProps> = ({
   primaryMedia,
   secondaryMedia,
 }) => {
-  return (
-    <div className={S.CompactCard}>
-      {showBackground && backgroundColumnWidth && (
-        <CardBackground isReversed={isReversed} size={backgroundColumnWidth} />
-      )}
+  const content = (
+    <div className={S.ContentWrapper}>
+      <CardContent {...mainContent} />
+    </div>
+  );
 
-      <div className={S.ContentWrapper}>
-        <CardContent {...mainContent} />
-      </div>
-
+  const media = (
+    <>
       {primaryMedia?.url && (
         <div className={S.PrimaryMediaWrapper}>
           <Image className={S.Media} fill src={primaryMedia?.url} alt="" />
@@ -37,7 +35,10 @@ const CompactCard: FC<CompactCardProps> = ({
       )}
 
       {secondaryMedia?.url && (
-        <div className={S.SecondaryMediaWrapper}>
+        <div
+          className={S.SecondaryMediaWrapper}
+          style={{ transform: `translateX(${isReversed ? -24 : 24}px)` }}
+        >
           <Image
             className={S.SecondaryMedia}
             fill
@@ -45,6 +46,26 @@ const CompactCard: FC<CompactCardProps> = ({
             alt=""
           />
         </div>
+      )}
+    </>
+  );
+
+  return (
+    <div className={S.CompactCard}>
+      {showBackground && backgroundColumnWidth && (
+        <CardBackground isReversed={isReversed} size={backgroundColumnWidth} />
+      )}
+
+      {isReversed ? (
+        <>
+          {media}
+          {content}
+        </>
+      ) : (
+        <>
+          {content}
+          {media}
+        </>
       )}
     </div>
   );
