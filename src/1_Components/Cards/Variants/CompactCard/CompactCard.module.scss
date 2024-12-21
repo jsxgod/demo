@@ -2,14 +2,14 @@
   position: relative;
   display: grid;
   column-gap: 72px;
-  grid-template-rows: auto 300px;
+  grid-template-rows: min-content 300px;
   grid-template-columns: repeat(2, 1fr);
 }
 
 .ContentWrapper {
   grid-row: 1;
   z-index: 2;
-  padding: 64px 0 48px;
+  padding: 64px 0 0;
 }
 
 .PrimaryMediaWrapper {
@@ -23,6 +23,10 @@
   z-index: 1;
   transform: translateY(180px);
 }
+.PrimaryMediaWrapperReversed {
+  @extend .PrimaryMediaWrapper;
+  justify-self: start;
+}
 
 .SecondaryMediaWrapper {
   grid-column: 1 / -1;
@@ -33,6 +37,11 @@
   width: 300px;
   height: 300px;
   z-index: 0;
+  transform: translateX(24px);
+}
+.SecondaryMediaWrapperReversed {
+  @extend .SecondaryMediaWrapper;
+  transform: translateX(-24px);
 }
 
 .Media {

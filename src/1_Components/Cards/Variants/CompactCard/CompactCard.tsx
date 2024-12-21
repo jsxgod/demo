@@ -29,15 +29,16 @@ const CompactCard: FC<CompactCardProps> = ({
   const media = (
     <>
       {primaryMedia?.url && (
-        <div className={S.PrimaryMediaWrapper}>
+        <div
+          className={S[`PrimaryMediaWrapper${isReversed ? "Reversed" : ""}`]}
+        >
           <Image className={S.Media} fill src={primaryMedia?.url} alt="" />
         </div>
       )}
 
       {secondaryMedia?.url && (
         <div
-          className={S.SecondaryMediaWrapper}
-          style={{ transform: `translateX(${isReversed ? -24 : 24}px)` }}
+          className={S[`SecondaryMediaWrapper${isReversed ? "Reversed" : ""}`]}
         >
           <Image
             className={S.SecondaryMedia}
