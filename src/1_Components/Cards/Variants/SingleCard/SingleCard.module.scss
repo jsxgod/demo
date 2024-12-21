@@ -1,0 +1,28 @@
+.SingleCard {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+}
+
+.ContentWrapper {
+  padding: 80px 0 120px;
+}
+
+.PrimaryMediaWrapper {
+  width: 100%;
+  height: calc(100% + 24px - 72px);
+}
+
+.Top {
+  transform: translateY(-24px);
+}
+
+.Bottom {
+  transform: translateY(24px);
+  align-self: end;
+}
+
+.Media {
+  object-fit: cover;
+}
