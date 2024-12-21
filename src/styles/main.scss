@@ -1,10 +1,10 @@
-@import "config/ease";
-@import "config/fonts";
-@import "config/pallette";
-@import "config/variables";
+@use "config/ease";
+@use "config/fonts";
+@use "config/pallette";
+@use "config/variables";
 
-@import "config/normalize";
-@import "config/mediaQuery";
+@use "config/normalize";
+@use "config/mediaQuery";
 
 html {
   overscroll-behavior: none;
