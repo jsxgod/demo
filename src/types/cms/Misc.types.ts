@@ -1,16 +1,15 @@
-export interface CmsColor {
-  hex: string;
+import { CmsColor } from "./System.types";
+
+export interface CmsComponentButton {
+  __typename: "Button";
+  label: string;
+  url?: string;
+  color: CmsColor;
 }
 
-export interface CmsMedia {
-  url: string;
-  width?: number;
-  height?: number;
-  mimeType?: string;
-}
-
-export interface CmsRichText {
-  html: string;
-  markdown: string;
-  text: string;
+export interface CmsComponentDownloadButton {
+  __typename: "DownloadButton";
+  label: string;
+  url?: string;
+  color: CmsColor;
 }

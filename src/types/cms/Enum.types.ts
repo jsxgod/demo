@@ -1,20 +1,5 @@
-export enum CmsEnumHorizontalAlignment {
-  left,
-  right,
-}
+export type CmsEnumHorizontalAlignment = "left" | "right";
 
-export enum CmsEnumVerticalAlignment {
-  top,
-  bottom,
-}
+export type CmsEnumVerticalAlignment = "top" | "bottom";
 
-export enum CmsEnumDynamicGridCardMediaType {
-  singleLarge,
-  pair,
-  pairSmall,
-}
-
-export enum CmsEnumMultipleComponentDirection {
-  row,
-  column,
-}
+export type CmsEnumCardVariant = "single" | "double" | "compact";

@@ -1,5 +1,5 @@
-import { CmsComponentDynamicSection } from "./Component.types";
+import { CmsComponentCard } from "./Card/Card.types";
 
 export interface CmsModelLandingPage {
-  sections: CmsComponentDynamicSection[];
+  cards: CmsComponentCard[];
 }
