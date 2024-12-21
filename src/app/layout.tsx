@@ -1,4 +1,12 @@
 import "@/styles/main.scss";
+import { Plus_Jakarta_Sans } from "next/font/google";
+
+export const plus_jakarta_sans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--plus-jakarta-sans",
+  weight: "400",
+});
 
 export const metadata = {
   title: "Next.js",
@@ -12,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className={`${plus_jakarta_sans.variable}`}>{children}</body>
     </html>
   );
 }
