@@ -1,0 +1,59 @@
+.CardContentWrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 48px;
+}
+
+.TextWrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+.Title {
+  font-size: 48px;
+  line-height: 130%;
+  font-weight: 500;
+}
+
+.Description {
+  font-size: 16px;
+  white-space: "pre-wrap";
+  font-weight: 500;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 16px;
+    margin: 1em 0;
+    font-weight: 500;
+  }
+
+  table {
+    border-spacing: 0px;
+
+    tr {
+      :not(:first-child) {
+        padding-left: 48px;
+      }
+    }
+
+    th,
+    td {
+      font-weight: normal;
+      text-align: unset;
+      vertical-align: top;
+    }
+  }
+}
+.DescriptionNarrow {
+  width: 50%;
+}
+
+.CtaWrapper {
+  display: flex;
+  gap: 10px;
+}
