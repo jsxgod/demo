@@ -9,24 +9,21 @@ const gqlClient = new GraphQLClient(process.env.HYGRAPH_ENDPOINT || "", {
 
 export const getLandingPageCmsData = async () => {
   const query = gql`
-    query {
+    {
       landingPages {
-        sections {
-          dynamicGridCards {
-            cardColumns
-            cardAlignment
-            isAlignedToTitle
+        cards {
+          variant
+          heading {
             title
-            titleStartColumn
-            titleColumns
+            description
+          }
+          mainContent {
+            title
             description {
-              text
-              markdown
               html
+              markdown
+              text
             }
-            descriptionStartColumn
-            descriptionColumns
-            ctaDirection
             ctaComponents {
               __typename
               ... on Button {
@@ -44,23 +41,22 @@ export const getLandingPageCmsData = async () => {
                 }
               }
             }
-            dynamicMedia {
-              type
-              verticalAlignment
-              horizontalAlignment
-              largeMedia {
-                url
-                width
-                height
-                mimeType
-              }
-              smallMedia {
-                url
-                width
-                height
-                mimeType
-              }
-            }
+          }
+          showBackground
+          backgroundColumnWidth
+          isShifted
+          primaryMediaVerticalAlignment
+          primaryMedia {
+            url
+            width
+            height
+            mimeType
+          }
+          secondaryMedia {
+            url
+            width
+            height
+            mimeType
           }
         }
       }
