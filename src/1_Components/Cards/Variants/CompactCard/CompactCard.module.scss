@@ -1,0 +1,35 @@
+.CompactCard {
+  position: relative;
+  display: grid;
+  column-gap: 72px;
+  grid-template-rows: auto 300px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.ContentWrapper {
+  grid-column: 1;
+  padding: 64px 0 48px;
+}
+
+.PrimaryMediaWrapper {
+  position: absolute;
+  grid-column: 2;
+  bottom: 180px;
+  left: 10%;
+  width: 90%;
+  aspect-ratio: 1/1;
+  min-width: 350px;
+}
+
+.SecondaryMediaWrapper {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  grid-row: 2;
+  grid-column: 2;
+  left: calc(-300px + 144px);
+}
+
+.Media {
+  object-fit: cover;
+}
