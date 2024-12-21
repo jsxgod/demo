@@ -8,3 +8,9 @@ export interface CmsMedia {
   height?: number;
   mimeType?: string;
 }
+
+export interface CmsRichText {
+  html: string;
+  markdown: string;
+  text: string;
+}

@@ -4,23 +4,23 @@ import {
   CmsEnumMultipleComponentDirection,
   CmsEnumVerticalAlignment,
 } from "./Enum.types";
-import { CmsColor, CmsMedia } from "./Misc.types";
+import { CmsColor, CmsMedia, CmsRichText } from "./Misc.types";
 
 export interface CmsComponentDynamicSection {
   title: string;
-  cards: CmsComponentDynamicGridCard[];
+  dynamicGridCards: CmsComponentDynamicGridCard[];
 }
 
 export interface CmsComponentDynamicGridCard {
   cardColumns: number;
   cardAlignment: CmsEnumHorizontalAlignment;
-  alignToTitle: boolean;
+  isAlignedToTitle: boolean;
 
   title: string;
   titleStartColumn?: number;
   titleColumns?: number;
 
-  description: string;
+  description: CmsRichText;
   descriptionStartColumn?: number;
   descriptionColumns?: number;
 
