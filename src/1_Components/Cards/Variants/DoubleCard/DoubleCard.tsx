@@ -30,7 +30,7 @@ const DoubleCard: FC<DoubleCardProps> = ({
     <>
       {primaryMedia?.url && (
         <div
-          className={S[`PrimaryImageWrapper${isReversed ? "Reversed" : ""}`]}
+          className={S[`PrimaryMediaWrapper${isReversed ? "Reversed" : ""}`]}
         >
           <Image className={S.Media} fill src={primaryMedia?.url} alt="" />
         </div>
@@ -38,7 +38,7 @@ const DoubleCard: FC<DoubleCardProps> = ({
 
       {secondaryMedia?.url && (
         <div
-          className={S[`SecondaryImageWrapper${isReversed ? "Reversed" : ""}`]}
+          className={S[`SecondaryMediaWrapper${isReversed ? "Reversed" : ""}`]}
         >
           <Image className={S.Media} fill src={secondaryMedia.url} alt="" />
         </div>
