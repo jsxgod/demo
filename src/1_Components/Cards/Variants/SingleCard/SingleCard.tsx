@@ -3,10 +3,11 @@ import { FC } from "react";
 import S from "./SingleCard.module.scss";
 import { CmsComponentCard } from "@/types/cms/Card/Card.types";
 import CardContent from "../../CardContent/CardContent";
-import Image from "next/image";
 import clsx from "clsx";
 import CardBackground from "../../CardBackground/CardBackground";
 import MaterialShowcase from "@/2_Sections/MaterialShowcase/MaterialShowcase";
+import MotionImage from "@/1_Components/MotionImage/MotionImage";
+import { fadeInUp } from "@/utils/animations";
 
 export interface SingleCardProps
   extends Omit<CmsComponentCard, "heading" | "variant" | "secondaryMedia"> {}
@@ -37,7 +38,16 @@ const SingleCard: FC<SingleCardProps> = ({
         [S.Shadow]: isShadowUnderPrimaryMedia,
       })}
     >
-      <Image className={S.Media} fill src={primaryMedia?.url} alt="" />
+      <MotionImage
+        className={S.Media}
+        fill
+        src={primaryMedia?.url}
+        alt=""
+        variants={fadeInUp}
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true, amount: 0.5 }}
+      />
     </div>
   );
 

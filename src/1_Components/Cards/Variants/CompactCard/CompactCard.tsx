@@ -3,8 +3,9 @@ import { FC } from "react";
 import S from "./CompactCard.module.scss";
 import { CmsComponentCard } from "@/types/cms/Card/Card.types";
 import CardContent from "../../CardContent/CardContent";
-import Image from "next/image";
 import CardBackground from "../../CardBackground/CardBackground";
+import MotionImage from "@/1_Components/MotionImage/MotionImage";
+import { fadeInLeft, fadeInRight } from "@/utils/animations";
 
 export interface CompactCardProps
   extends Omit<
@@ -36,7 +37,17 @@ const CompactCard: FC<CompactCardProps> = ({
         <div
           className={S[`PrimaryMediaWrapper${isReversed ? "Reversed" : ""}`]}
         >
-          <Image className={S.Media} fill src={primaryMedia?.url} alt="" />
+          <MotionImage
+            className={S.Media}
+            fill
+            src={primaryMedia?.url}
+            alt=""
+            variants={isReversed ? fadeInRight : fadeInLeft}
+            initial="initial"
+            whileInView="animate"
+            exit="initial"
+            viewport={{ once: true, amount: 0.5 }}
+          />
         </div>
       )}
 
@@ -44,11 +55,15 @@ const CompactCard: FC<CompactCardProps> = ({
         <div
           className={S[`SecondaryMediaWrapper${isReversed ? "Reversed" : ""}`]}
         >
-          <Image
+          <MotionImage
             className={S.SecondaryMedia}
             fill
             src={secondaryMedia.url}
             alt=""
+            variants={isReversed ? fadeInLeft : fadeInRight}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true, amount: 0.5 }}
           />
         </div>
       )}

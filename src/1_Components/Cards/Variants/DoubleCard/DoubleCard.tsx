@@ -3,8 +3,9 @@ import { FC } from "react";
 import S from "./DoubleCard.module.scss";
 import { CmsComponentCard } from "@/types/cms/Card/Card.types";
 import CardContent from "../../CardContent/CardContent";
-import Image from "next/image";
 import CardBackground from "../../CardBackground/CardBackground";
+import { fadeInUp } from "@/utils/animations";
+import MotionImage from "@/1_Components/MotionImage/MotionImage";
 
 export interface DoubleCardProps
   extends Omit<
@@ -33,7 +34,16 @@ const DoubleCard: FC<DoubleCardProps> = ({
         <div
           className={S[`PrimaryMediaWrapper${isReversed ? "Reversed" : ""}`]}
         >
-          <Image className={S.Media} fill src={primaryMedia?.url} alt="" />
+          <MotionImage
+            className={S.Media}
+            fill
+            src={primaryMedia?.url}
+            alt=""
+            variants={fadeInUp}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true, amount: 0.5 }}
+          />
         </div>
       )}
 
@@ -41,7 +51,16 @@ const DoubleCard: FC<DoubleCardProps> = ({
         <div
           className={S[`SecondaryMediaWrapper${isReversed ? "Reversed" : ""}`]}
         >
-          <Image className={S.Media} fill src={secondaryMedia.url} alt="" />
+          <MotionImage
+            className={S.Media}
+            fill
+            src={secondaryMedia.url}
+            alt=""
+            variants={fadeInUp}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true, amount: "some" }}
+          />
         </div>
       )}
     </>
