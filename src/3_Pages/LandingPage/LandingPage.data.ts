@@ -11,6 +11,15 @@ export const getLandingPageCmsData = async () => {
   const query = gql`
     {
       landingPages {
+        heroSection {
+          backgroundMedia {
+            url
+            mimeType
+            width
+            height
+          }
+        }
+
         cards {
           variant
           heading {
