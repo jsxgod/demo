@@ -1,0 +1,17 @@
+.DownloadButton {
+  display: grid;
+  grid-auto-flow: column;
+  column-gap: 10px;
+
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  svg {
+    height: 100%;
+  }
+}
