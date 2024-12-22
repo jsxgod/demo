@@ -10,6 +10,7 @@ export interface CmsComponentCardHeading {
 export interface CmsComponentCardContent {
   title: string;
   description: CmsRichText;
+  isNarrowDescription: boolean;
   ctaComponents: (CmsComponentButton | CmsComponentDownloadButton)[];
 }
 
