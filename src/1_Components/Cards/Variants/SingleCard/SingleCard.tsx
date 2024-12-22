@@ -48,7 +48,7 @@ const SingleCard: FC<SingleCardProps> = ({
         variants={fadeInUp}
         initial="initial"
         whileInView="animate"
-        viewport={{ once: true, amount: 0.5 }}
+        viewport={{ once: true, amount: 0.25 }}
       />
     </div>
   );

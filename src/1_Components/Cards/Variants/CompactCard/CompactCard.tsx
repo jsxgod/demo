@@ -46,7 +46,7 @@ const CompactCard: FC<CompactCardProps> = ({
             initial="initial"
             whileInView="animate"
             exit="initial"
-            viewport={{ once: true, amount: 0.5 }}
+            viewport={{ once: true, amount: 0.25 }}
           />
         </div>
       )}
@@ -63,7 +63,7 @@ const CompactCard: FC<CompactCardProps> = ({
             variants={isReversed ? fadeInLeft : fadeInRight}
             initial="initial"
             whileInView="animate"
-            viewport={{ once: true, amount: 0.5 }}
+            viewport={{ once: true, amount: 0.25 }}
           />
         </div>
       )}

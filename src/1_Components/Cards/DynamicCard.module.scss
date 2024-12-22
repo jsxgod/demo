@@ -1,5 +1,12 @@
+@import "/src/styles/config/mediaQuery";
+
 .Shift {
-  transform: translateX(72px);
+  display: none;
+
+  @include desktop {
+    display: initial;
+    transform: translateX(72px);
+  }
 }
 
 .ReverseShift {

@@ -1,6 +1,13 @@
+@import "/src/styles/config/mediaQuery";
+
 .Background {
   position: absolute;
   z-index: -1;
   top: 0;
   bottom: 0;
+
+  @include phone {
+    inset: 0 !important;
+    width: 100% !important;
+  }
 }

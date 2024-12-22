@@ -1,34 +1,61 @@
+@import "/src/styles/config/mediaQuery";
+
 .SingleCard {
   position: relative;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 72px;
+
+  @include phone {
+    padding: 40px 20px;
+    gap: 32px;
+  }
+
+  @include desktop {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 72px;
+  }
 }
 
 .ContentWrapper {
-  padding: 80px 0 120px;
+  padding: 0;
+
+  @include desktop {
+    padding: 80px 0 120px;
+  }
 }
 
 .PrimaryMediaWrapper {
   position: relative;
   width: 100%;
-  height: calc(100% + 24px - 72px);
+
+  @include phone {
+    aspect-ratio: 2 / 2.25;
+  }
+
+  @include desktop {
+    height: calc(100% + 24px - 72px);
+  }
 }
 .Top {
-  transform: translateY(-24px);
+  @include desktop {
+    transform: translateY(-24px);
+  }
 }
 .Bottom {
-  transform: translateY(24px);
-  align-self: end;
+  @include desktop {
+    transform: translateY(24px);
+    align-self: end;
+  }
 }
 
 .Media {
   object-fit: cover;
 }
 .Shadow {
-  -webkit-box-shadow: 12px 8px 40px 29px rgba(66, 68, 90, 0.3);
-  -moz-box-shadow: 12px 8px 40px 29px rgba(66, 68, 90, 0.3);
-  box-shadow: 14px 14px 40px 30px rgb(198, 198, 202);
+  @include desktop {
+    -webkit-box-shadow: 12px 8px 40px 29px rgba(66, 68, 90, 0.3);
+    -moz-box-shadow: 12px 8px 40px 29px rgba(66, 68, 90, 0.3);
+    box-shadow: 14px 14px 40px 30px rgb(198, 198, 202);
+  }
 }
 
 .ProductShowcaseWrapper {
@@ -36,5 +63,10 @@
   top: 100%;
   left: 0;
   right: 0;
-  transform: translateY(-30px);
+
+  transform: translateY(-50%);
+
+  @include desktop {
+    transform: translateY(-30px);
+  }
 }
