@@ -1,9 +1,20 @@
 .LandingPage {
   display: grid;
+  padding: 200px 0;
+  gap: 200px;
 }
 
-.SectionContainer {
+.CardSection {
   display: flex;
   flex-direction: column;
-  row-gap: 100px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.CardWrapper {
+  display: grid;
+  max-width: 1100px;
+  height: 100%;
 }
