@@ -35,11 +35,13 @@ const SingleCard: FC<SingleCardProps> = ({
         [S.PrimaryMediaWrapper]: true,
         [S.Top]: primaryMediaVerticalAlignment === "top",
         [S.Bottom]: primaryMediaVerticalAlignment === "bottom",
-        [S.Shadow]: isShadowUnderPrimaryMedia,
       })}
     >
       <MotionImage
-        className={S.Media}
+        className={clsx({
+          [S.Media]: true,
+          [S.Shadow]: isShadowUnderPrimaryMedia,
+        })}
         fill
         src={primaryMedia?.url}
         alt=""
