@@ -1,7 +1,7 @@
 import "@/styles/main.scss";
 import { Plus_Jakarta_Sans } from "next/font/google";
 
-export const plus_jakarta_sans = Plus_Jakarta_Sans({
+const plus_jakarta_sans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   display: "swap",
   variable: "--plus-jakarta-sans",
