@@ -6,6 +6,7 @@ import CardContent from "../../CardContent/CardContent";
 import Image from "next/image";
 import clsx from "clsx";
 import CardBackground from "../../CardBackground/CardBackground";
+import MaterialShowcase from "@/2_Sections/MaterialShowcase/MaterialShowcase";
 
 export interface SingleCardProps
   extends Omit<CmsComponentCard, "heading" | "variant" | "secondaryMedia"> {}
@@ -19,6 +20,7 @@ const SingleCard: FC<SingleCardProps> = ({
   primaryMediaVerticalAlignment,
   isShadowUnderPrimaryMedia,
   gradient,
+  withProductShowcase,
 }) => {
   const content = (
     <div className={S.ContentWrapper}>
@@ -59,6 +61,12 @@ const SingleCard: FC<SingleCardProps> = ({
           {content}
           {media}
         </>
+      )}
+
+      {withProductShowcase && (
+        <div className={S.ProductShowcaseWrapper}>
+          <MaterialShowcase />
+        </div>
       )}
     </div>
   );
