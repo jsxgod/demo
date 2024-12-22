@@ -13,3 +13,9 @@ export interface CmsComponentDownloadButton {
   url?: string;
   color: CmsColor;
 }
+
+export interface CmsComponentGradient {
+  firstColor: CmsColor;
+  secondColor: CmsColor;
+  angle: number;
+}
