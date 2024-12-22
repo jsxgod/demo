@@ -17,6 +17,8 @@ export const getLandingPageCmsData = async () => {
             title
             description
           }
+          isReversed
+          isShifted
           mainContent {
             title
             description {
@@ -24,6 +26,7 @@ export const getLandingPageCmsData = async () => {
               markdown
               text
             }
+            isNarrowDescription
             ctaComponents {
               __typename
               ... on Button {
@@ -44,7 +47,6 @@ export const getLandingPageCmsData = async () => {
           }
           showBackground
           backgroundColumnWidth
-          isShifted
           primaryMediaVerticalAlignment
           primaryMedia {
             url
