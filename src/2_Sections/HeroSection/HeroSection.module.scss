@@ -1,0 +1,15 @@
+.HeroSection {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.BackgroundMediaWrapper {
+  position: absolute;
+  inset: 0;
+
+  img,
+  video {
+    object-fit: cover;
+  }
+}
