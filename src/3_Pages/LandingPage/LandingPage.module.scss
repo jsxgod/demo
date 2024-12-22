@@ -2,10 +2,14 @@
 
 .LandingPage {
   display: grid;
-  padding: 0 0 200px;
-  gap: 400px;
+  gap: 200px;
   max-width: 100%;
   overflow: hidden;
+
+  @include desktop {
+    gap: 400px;
+    padding: 0 0 200px;
+  }
 }
 
 .CardSection {
