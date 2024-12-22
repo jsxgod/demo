@@ -27,6 +27,7 @@ export interface CmsComponentCard {
   gradient: CmsComponentGradient;
   backgroundColumnWidth?: 2 | 3 | 4;
   isShifted?: boolean;
+  isShadowUnderPrimaryMedia?: boolean;
   primaryMedia?: CmsMedia;
   primaryMediaVerticalAlignment?: CmsEnumVerticalAlignment;
   secondaryMedia?: CmsMedia;
