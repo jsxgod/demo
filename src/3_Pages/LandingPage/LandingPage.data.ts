@@ -57,6 +57,7 @@ export const getLandingPageCmsData = async () => {
           }
           backgroundColumnWidth
           primaryMediaVerticalAlignment
+          isShadowUnderPrimaryMedia
           primaryMedia {
             url
             width
