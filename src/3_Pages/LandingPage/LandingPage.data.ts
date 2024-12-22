@@ -46,6 +46,15 @@ export const getLandingPageCmsData = async () => {
             }
           }
           showBackground
+          gradient {
+            firstColor {
+              hex
+            }
+            secondColor {
+              hex
+            }
+            angle
+          }
           backgroundColumnWidth
           primaryMediaVerticalAlignment
           primaryMedia {
