@@ -17,6 +17,7 @@ const SingleCard: FC<SingleCardProps> = ({
   backgroundColumnWidth,
   primaryMedia,
   primaryMediaVerticalAlignment,
+  gradient,
 }) => {
   const content = (
     <div className={S.ContentWrapper}>
@@ -38,7 +39,11 @@ const SingleCard: FC<SingleCardProps> = ({
   return (
     <div className={S.SingleCard}>
       {showBackground && backgroundColumnWidth && (
-        <CardBackground isReversed={isReversed} size={backgroundColumnWidth} />
+        <CardBackground
+          isReversed={isReversed}
+          size={backgroundColumnWidth}
+          gradient={gradient}
+        />
       )}
 
       {isReversed ? (

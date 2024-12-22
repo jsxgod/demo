@@ -9,7 +9,11 @@ import CardBackground from "../../CardBackground/CardBackground";
 export interface CompactCardProps
   extends Omit<
     CmsComponentCard,
-    "variant" | "heading" | "isShifted" | "primaryMediaVerticalAlignment"
+    | "variant"
+    | "heading"
+    | "isShifted"
+    | "primaryMediaVerticalAlignment"
+    | "gradient"
   > {}
 
 const CompactCard: FC<CompactCardProps> = ({

@@ -19,6 +19,7 @@ const DoubleCard: FC<DoubleCardProps> = ({
   backgroundColumnWidth,
   primaryMedia,
   secondaryMedia,
+  gradient,
 }) => {
   const content = (
     <div className={S.ContentWrapper}>
@@ -51,7 +52,11 @@ const DoubleCard: FC<DoubleCardProps> = ({
       style={{ marginBottom: secondaryMedia?.url ? 164 : 0 }}
     >
       {showBackground && backgroundColumnWidth && (
-        <CardBackground size={backgroundColumnWidth} isReversed={isReversed} />
+        <CardBackground
+          size={backgroundColumnWidth}
+          isReversed={isReversed}
+          gradient={gradient}
+        />
       )}
 
       {isReversed ? (
