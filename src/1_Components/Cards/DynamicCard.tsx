@@ -4,18 +4,27 @@ import DoubleCard from "./Variants/DoubleCard/DoubleCard";
 import CompactCard from "./Variants/CompactCard/CompactCard";
 import SingleCard from "./Variants/SingleCard/SingleCard";
 import CardHeading from "./CardHeading/CardHeading";
+import S from "./DynamicCard.module.scss";
 
 export interface DynamicCardProps extends CmsComponentCard {}
 
 const DynamicCard: FC<DynamicCardProps> = ({ ...rest }) => {
-  const { variant, heading, isReversed } = rest || {};
+  const { variant, heading, isReversed, isShifted } = rest || {};
 
-  const withHeading = (variant: JSX.Element | null) => {
+  const withShift = (element: JSX.Element | null) => {
+    return isShifted ? (
+      <span className={isReversed ? S.ReverseShift : S.Shift}>{element}</span>
+    ) : (
+      element
+    );
+  };
+
+  const withHeading = (element: JSX.Element | null) => {
     return (
       <>
         {heading && <CardHeading isReversed={!isReversed} {...heading} />}
 
-        {variant}
+        {withShift(element)}
       </>
     );
   };
