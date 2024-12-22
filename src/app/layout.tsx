@@ -9,7 +9,7 @@ const plus_jakarta_sans = Plus_Jakarta_Sans({
 });
 
 export const metadata = {
-  title: "Cards",
+  title: "180HB Demo",
   description: "Dynamic CMS cards.",
 };
 
