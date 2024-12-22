@@ -23,6 +23,7 @@
 }
 .DescriptionReversed {
   @extend .Description;
+  padding-left: 0;
   padding-right: 28%;
   text-align: right;
 }

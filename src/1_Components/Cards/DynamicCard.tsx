@@ -13,7 +13,7 @@ const DynamicCard: FC<DynamicCardProps> = ({ ...rest }) => {
   const withHeading = (variant: JSX.Element | null) => {
     return (
       <>
-        {heading && <CardHeading isReversed={isReversed} {...heading} />}
+        {heading && <CardHeading isReversed={!isReversed} {...heading} />}
 
         {variant}
       </>
