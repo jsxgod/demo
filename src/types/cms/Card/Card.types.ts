@@ -31,4 +31,5 @@ export interface CmsComponentCard {
   primaryMedia?: CmsMedia;
   primaryMediaVerticalAlignment?: CmsEnumVerticalAlignment;
   secondaryMedia?: CmsMedia;
+  withProductShowcase?: boolean;
 }
