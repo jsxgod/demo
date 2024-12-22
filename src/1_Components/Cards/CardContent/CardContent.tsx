@@ -9,6 +9,7 @@ import {
 import { CmsRichText } from "@/types/cms/System.types";
 import Button from "@/1_Components/CTAs/Button/Button";
 import clsx from "clsx";
+import DownloadButton from "@/1_Components/CTAs/DownloadButton/DownloadButton";
 
 export interface CardContentData {
   title: string;
@@ -46,7 +47,12 @@ const CardContent: FC<CardContentProps> = ({
             return __typename === "Button" ? (
               <Button key={index} label={label} url={url} color={color.hex} />
             ) : __typename === "DownloadButton" ? (
-              <Button key={index} label={label} url={url} color={color.hex} />
+              <DownloadButton
+                key={index}
+                label={label}
+                url={url}
+                color={color.hex}
+              />
             ) : null;
           })}
         </div>
