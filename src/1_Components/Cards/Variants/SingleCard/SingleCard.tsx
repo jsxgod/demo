@@ -65,7 +65,7 @@ const SingleCard: FC<SingleCardProps> = ({
 
       {withProductShowcase && (
         <div className={S.ProductShowcaseWrapper}>
-          <MaterialShowcase />
+          <MaterialShowcase limit={2} />
         </div>
       )}
     </div>
