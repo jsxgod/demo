@@ -17,6 +17,7 @@ const SingleCard: FC<SingleCardProps> = ({
   backgroundColumnWidth,
   primaryMedia,
   primaryMediaVerticalAlignment,
+  isShadowUnderPrimaryMedia,
   gradient,
 }) => {
   const content = (
@@ -27,10 +28,12 @@ const SingleCard: FC<SingleCardProps> = ({
 
   const media = primaryMedia?.url && (
     <div
-      className={clsx(
-        S.PrimaryMediaWrapper,
-        primaryMediaVerticalAlignment === "top" ? S.Top : S.Bottom
-      )}
+      className={clsx({
+        [S.PrimaryMediaWrapper]: true,
+        [S.Top]: primaryMediaVerticalAlignment === "top",
+        [S.Bottom]: primaryMediaVerticalAlignment === "bottom",
+        [S.Shadow]: isShadowUnderPrimaryMedia,
+      })}
     >
       <Image className={S.Media} fill src={primaryMedia?.url} alt="" />
     </div>

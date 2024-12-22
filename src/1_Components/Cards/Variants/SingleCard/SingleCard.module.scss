@@ -10,14 +10,18 @@
 }
 
 .PrimaryMediaWrapper {
+  position: relative;
   width: 100%;
   height: calc(100% + 24px - 72px);
 }
-
+.Shadow {
+  -webkit-box-shadow: 12px 8px 40px 29px rgba(66, 68, 90, 0.3);
+  -moz-box-shadow: 12px 8px 40px 29px rgba(66, 68, 90, 0.3);
+  box-shadow: 14px 14px 40px 30px rgb(198, 198, 202);
+}
 .Top {
   transform: translateY(-24px);
 }
-
 .Bottom {
   transform: translateY(24px);
   align-self: end;
