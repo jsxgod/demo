@@ -70,6 +70,7 @@ export const getLandingPageCmsData = async () => {
             height
             mimeType
           }
+          withProductShowcase
         }
       }
     }
